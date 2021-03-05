@@ -41,7 +41,7 @@
     <form id="form" action="">
       <button id="negrita">N</button>
       <input type="color" name="color" id="color">
-      <input id="input" autocomplete="off" /><button>Send</button>
+      <input id="input" autocomplete="off" /><button>Enviar</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
 <script>
@@ -59,7 +59,6 @@
   
   nombreInput.addEventListener('keyup',function(e){
     if(e.keyCode==13){
-      e.preventDefault();
       nombre = nombreInput.value;
       nombreInput = "";
       divNombre.style.display="none";
@@ -68,21 +67,19 @@
   })
 
   botonNegrita.addEventListener('click',function(e){
-    e.preventDefault();
     negrita = !negrita;
     if(negrita){
       botonNegrita.style.color="initial";
       botonNegrita.style.fontWeight="bold";
       botonNegrita.style.backgroundColor="white";
     }else{
-      botonNegrita.style.color="black";
+      botonNegrita.style.color="white";
       botonNegrita.style.fontWeight="initial";
-      botonNegrita.style.backgroundColor="initial";
+      botonNegrita.style.backgroundColor="#333";
     }
   })
 
   botonColor.addEventListener("change",function(e){
-    e.preventDefault();
     color = botonColor.value;
   })
   form.addEventListener('submit', function(e) {
